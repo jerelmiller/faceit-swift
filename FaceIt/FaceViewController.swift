@@ -31,12 +31,12 @@ class FaceViewController: UIViewController {
   ]
   
   private func updateUI() {
-    drawEyes()
-    drawMouth()
-    drawEyeBrows()
+    updateEyes()
+    updateMouth()
+    updateEyeBrows()
   }
   
-  private func drawEyes() {
+  private func updateEyes() {
     switch expression.eyes {
     case .Open: faceView.eyesOpen = true
     case .Closed: faceView.eyesOpen = false
@@ -44,11 +44,11 @@ class FaceViewController: UIViewController {
     }
   }
   
-  private func drawMouth() {
+  private func updateMouth() {
     faceView.mouthCurvature = mouthCurvatures[expression.mouth] ?? 0.0
   }
   
-  private func drawEyeBrows() {
+  private func updateEyeBrows() {
     faceView.eyebrowTilt = eyeBrowTilts[expression.eyeBrows] ?? 0.0
   }
 }
