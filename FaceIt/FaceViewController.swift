@@ -15,6 +15,7 @@ class FaceViewController: UIViewController {
   @IBOutlet weak var faceView: FaceView! {
     didSet {
       addPinchGesture()
+      addSwipeUpGesture()
       updateUI()
     }
   }
@@ -32,6 +33,10 @@ class FaceViewController: UIViewController {
     .Furrowed: -0.5,
     .Normal: 0.0
   ]
+  
+  func increaseHappiness() {
+    expression.mouth = expression.mouth.happierMouth()
+  }
   
   private func updateUI() {
     updateEyes()
@@ -62,5 +67,15 @@ class FaceViewController: UIViewController {
         action: #selector(FaceView.changeScale(_:))
       )
     )
+  }
+  
+  private func addSwipeUpGesture() {
+    let happierSwipeGestureRecognizer = UISwipeGestureRecognizer(
+      target: self,
+      action: #selector(FaceViewController.increaseHappiness)
+    )
+    happierSwipeGestureRecognizer.direction = .Up
+    
+    faceView.addGestureRecognizer(happierSwipeGestureRecognizer)
   }
 }
