@@ -24,12 +24,24 @@ class FaceView: UIView {
     case Right
   }
   
-  @IBInspectable var scale: CGFloat = 0.90
-  @IBInspectable var mouthCurvature: Double = 1.0 // 1 full smile, -1 full frown
-  @IBInspectable var eyesOpen: Bool = true
-  @IBInspectable var eyebrowTilt: Double = 0.0 // -1 full furrow, 1 fully relaxed
-  @IBInspectable var color: UIColor = UIColor.blueColor()
-  @IBInspectable var lineWidth: CGFloat = 5.0
+  @IBInspectable var scale: CGFloat = 0.90 {
+    didSet { setNeedsDisplay() }
+  }
+  @IBInspectable var mouthCurvature: Double = 1.0 {
+    didSet { setNeedsDisplay() }
+  }
+  @IBInspectable var eyesOpen: Bool = true {
+    didSet { setNeedsDisplay() }
+  }
+  @IBInspectable var eyebrowTilt: Double = 0.0 {
+    didSet { setNeedsDisplay() }
+  }
+  @IBInspectable var color: UIColor = UIColor.blueColor() {
+    didSet { setNeedsDisplay() }
+  }
+  @IBInspectable var lineWidth: CGFloat = 5.0 {
+    didSet { setNeedsDisplay() }
+  }
   
   private var skullRadius: CGFloat {
     return min(bounds.size.width, bounds.size.height) / 2 * scale
