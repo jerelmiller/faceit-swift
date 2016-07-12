@@ -61,6 +61,16 @@ class FaceView: UIView {
     pathForBrow(.Right).stroke()
   }
   
+  func changeScale(recognizer: UIPinchGestureRecognizer) {
+    switch recognizer.state {
+    case .Changed, .Ended:
+      scale *= recognizer.scale
+      recognizer.scale = 1.0
+    default:
+      break
+    }
+  }
+  
   private func pathForEye(eye: Eye) -> UIBezierPath {
     let eyeRadius = skullRadius / Ratios.SkullRadiusToEyeRadius
     let eyeCenter = getEyeCenter(eye)

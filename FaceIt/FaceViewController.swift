@@ -13,7 +13,10 @@ class FaceViewController: UIViewController {
     didSet { updateUI() }
   }
   @IBOutlet weak var faceView: FaceView! {
-    didSet { updateUI() }
+    didSet {
+      addPinchGesture()
+      updateUI()
+    }
   }
   
   private var mouthCurvatures = [
@@ -50,5 +53,14 @@ class FaceViewController: UIViewController {
   
   private func updateEyeBrows() {
     faceView.eyebrowTilt = eyeBrowTilts[expression.eyeBrows] ?? 0.0
+  }
+  
+  private func addPinchGesture() {
+    faceView.addGestureRecognizer(
+      UIPinchGestureRecognizer(
+        target: faceView,
+        action: #selector(FaceView.changeScale(_:))
+      )
+    )
   }
 }
