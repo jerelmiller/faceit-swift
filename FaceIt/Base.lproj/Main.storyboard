@@ -13,10 +13,22 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="Fac">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2wD-B1-Q3r" customClass="FaceView" customModule="FaceIt" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2wD-B1-Q3r" secondAttribute="trailing" id="ASv-mr-TkQ"/>
+                            <constraint firstItem="2wD-B1-Q3r" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="AgL-wI-dFm"/>
+                            <constraint firstItem="2wD-B1-Q3r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lA2-4n-oFj"/>
+                            <constraint firstItem="2wD-B1-Q3r" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ouI-ec-wSI"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

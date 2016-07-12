@@ -12,6 +12,7 @@
 		D166739D1D34A2C300F65141 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D166739B1D34A2C300F65141 /* Main.storyboard */; };
 		D166739F1D34A2C300F65141 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D166739E1D34A2C300F65141 /* Assets.xcassets */; };
 		D16673A21D34A2C300F65141 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16673A01D34A2C300F65141 /* LaunchScreen.storyboard */; };
+		D16673AA1D34A49200F65141 /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16673A91D34A49200F65141 /* FaceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D166739E1D34A2C300F65141 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D16673A11D34A2C300F65141 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D16673A31D34A2C300F65141 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D16673A91D34A49200F65141 /* FaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				D16673971D34A2C300F65141 /* AppDelegate.swift */,
 				D16673991D34A2C300F65141 /* FaceViewController.swift */,
 				D166739B1D34A2C300F65141 /* Main.storyboard */,
+				D16673A91D34A49200F65141 /* FaceView.swift */,
 				D166739E1D34A2C300F65141 /* Assets.xcassets */,
 				D16673A01D34A2C300F65141 /* LaunchScreen.storyboard */,
 				D16673A31D34A2C300F65141 /* Info.plist */,
@@ -137,6 +140,7 @@
 			files = (
 				D166739A1D34A2C300F65141 /* FaceViewController.swift in Sources */,
 				D16673981D34A2C300F65141 /* AppDelegate.swift in Sources */,
+				D16673AA1D34A49200F65141 /* FaceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
