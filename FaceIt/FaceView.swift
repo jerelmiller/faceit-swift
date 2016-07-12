@@ -27,6 +27,7 @@ class FaceView: UIView {
   var mouthCurvature: Double = 1.0 // 1 full smile, -1 full frown
   var eyesOpen: Bool = true
   var eyebrowTilt: Double = 0.0 // -1 full furrow, 1 fully relaxed
+  var color: UIColor = UIColor.blueColor()
   
   private var skullRadius: CGFloat {
     return min(bounds.size.width, bounds.size.height) / 2 * scale
@@ -37,7 +38,7 @@ class FaceView: UIView {
   }
   
   override func drawRect(rect: CGRect) {
-    UIColor.blueColor().set()
+    color.set()
     pathForCircleCenteredAtPoint(skullCenter, withRadius: skullRadius).stroke()
     pathForEye(.Left).stroke()
     pathForEye(.Right).stroke()
