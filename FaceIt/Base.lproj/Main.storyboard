@@ -61,17 +61,18 @@
                             <constraint firstItem="dgY-9W-uO8" firstAttribute="centerY" secondItem="Yt4-qW-x6v" secondAttribute="centerY" id="PrE-Dd-z2f"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="L9O-LN-xvV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J6s-3q-56y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="346" y="-253"/>
+            <point key="canvasLocation" x="1158" y="-253"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="MS5-Zt-Qdr">
             <objects>
                 <splitViewController id="WZ0-Wy-MCx" sceneMemberID="viewController">
                     <connections>
-                        <segue destination="jEZ-nu-ZEz" kind="relationship" relationship="masterViewController" id="ne7-cw-McE"/>
+                        <segue destination="Ze2-3U-Tug" kind="relationship" relationship="masterViewController" id="ne7-cw-McE"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="detailViewController" id="daL-kL-eVE"/>
                     </connections>
                 </splitViewController>
@@ -134,7 +135,25 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="346" y="476"/>
+            <point key="canvasLocation" x="1158" y="516"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="y2r-tr-1Mg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ze2-3U-Tug" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="akg-E5-Ff2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jEZ-nu-ZEz" kind="relationship" relationship="rootViewController" id="cIZ-fu-eCq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f3O-dU-vdK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="346" y="-253"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
