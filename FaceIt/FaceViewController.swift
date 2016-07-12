@@ -16,6 +16,7 @@ class FaceViewController: UIViewController {
     didSet {
       addPinchGestureRecognizer()
       addSwipeUpGestureRecognizer()
+      addSwipeDownGestureRecognizer()
       updateUI()
     }
   }
@@ -36,6 +37,20 @@ class FaceViewController: UIViewController {
   
   func increaseHappiness() {
     expression.mouth = expression.mouth.happierMouth()
+  }
+  
+  func decreaseHappiness() {
+    expression.mouth = expression.mouth.sadderMouth()
+  }
+  
+  @IBAction func toggleEyes(recognizer: UITapGestureRecognizer) {
+    if recognizer.state == .Ended {
+      switch expression.eyes {
+      case .Open: expression.eyes = .Closed
+      case .Closed: expression.eyes = .Open
+      case .Squinting: break
+      }
+    }
   }
   
   private func updateUI() {
@@ -77,5 +92,15 @@ class FaceViewController: UIViewController {
     happierSwipeGestureRecognizer.direction = .Up
     
     faceView.addGestureRecognizer(happierSwipeGestureRecognizer)
+  }
+  
+  private func addSwipeDownGestureRecognizer() {
+    let sadderSwipeGestureRecognizer = UISwipeGestureRecognizer(
+      target: self,
+      action: #selector(FaceViewController.decreaseHappiness)
+    )
+    sadderSwipeGestureRecognizer.direction = .Down
+    
+    faceView.addGestureRecognizer(sadderSwipeGestureRecognizer)
   }
 }
