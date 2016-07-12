@@ -9,10 +9,13 @@
 import UIKit
 
 class FaceView: UIView {
-  var skullRadius: CGFloat {
-    return min(bounds.size.width, bounds.size.height) / 2
+  var scale: CGFloat = 0.90
+  
+  private var skullRadius: CGFloat {
+    return min(bounds.size.width, bounds.size.height) / 2 * scale
   }
-  var skullCenter: CGPoint {
+  
+  private var skullCenter: CGPoint {
     return CGPoint(x: bounds.midX, y: bounds.midY)
   }
   
