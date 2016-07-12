@@ -27,6 +27,10 @@ class EmotionsViewController: UIViewController {
       if let identifier = segue.identifier {
         if let expression = emotionalFaces[identifier] {
           faceVC.expression = expression
+          
+          if let sendingButton = sender as? UIButton {
+            faceVC.navigationItem.title = sendingButton.currentTitle
+          }
         }
       }
     }
