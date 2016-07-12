@@ -28,6 +28,7 @@ class FaceView: UIView {
   var eyesOpen: Bool = true
   var eyebrowTilt: Double = 0.0 // -1 full furrow, 1 fully relaxed
   var color: UIColor = UIColor.blueColor()
+  var lineWidth: CGFloat = 5.0
   
   private var skullRadius: CGFloat {
     return min(bounds.size.width, bounds.size.height) / 2 * scale
@@ -58,7 +59,7 @@ class FaceView: UIView {
     let path = UIBezierPath()
     path.moveToPoint(CGPoint(x: eyeCenter.x - eyeRadius, y: eyeCenter.y))
     path.addLineToPoint(CGPoint(x: eyeCenter.x + eyeRadius, y: eyeCenter.y))
-    path.lineWidth = 5.0
+    path.lineWidth = lineWidth
     
     return path
   }
@@ -79,7 +80,7 @@ class FaceView: UIView {
     let path = UIBezierPath()
     path.moveToPoint(browStart)
     path.addLineToPoint(browEnd)
-    path.lineWidth = 5.0
+    path.lineWidth = lineWidth
     
     return path
   }
@@ -105,7 +106,7 @@ class FaceView: UIView {
     let path = UIBezierPath()
     path.moveToPoint(start)
     path.addCurveToPoint(end, controlPoint1: cp1, controlPoint2: cp2)
-    path.lineWidth = 5.0
+    path.lineWidth = lineWidth
     
     return path
   }
@@ -132,7 +133,7 @@ class FaceView: UIView {
       clockwise: true
     )
     
-    path.lineWidth = 5.0
+    path.lineWidth = lineWidth
     
     return path
   }
