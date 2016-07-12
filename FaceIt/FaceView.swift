@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class FaceView: UIView {
   private struct Ratios {
     static let SkullRadiusToEyeOffset: CGFloat = 3
@@ -23,12 +24,12 @@ class FaceView: UIView {
     case Right
   }
   
-  var scale: CGFloat = 0.90
-  var mouthCurvature: Double = 1.0 // 1 full smile, -1 full frown
-  var eyesOpen: Bool = true
-  var eyebrowTilt: Double = 0.0 // -1 full furrow, 1 fully relaxed
-  var color: UIColor = UIColor.blueColor()
-  var lineWidth: CGFloat = 5.0
+  @IBInspectable var scale: CGFloat = 0.90
+  @IBInspectable var mouthCurvature: Double = 1.0 // 1 full smile, -1 full frown
+  @IBInspectable var eyesOpen: Bool = true
+  @IBInspectable var eyebrowTilt: Double = 0.0 // -1 full furrow, 1 fully relaxed
+  @IBInspectable var color: UIColor = UIColor.blueColor()
+  @IBInspectable var lineWidth: CGFloat = 5.0
   
   private var skullRadius: CGFloat {
     return min(bounds.size.width, bounds.size.height) / 2 * scale
