@@ -54,9 +54,11 @@ class FaceViewController: UIViewController {
   }
   
   private func updateUI() {
-    updateEyes()
-    updateMouth()
-    updateEyeBrows()
+    if faceView != nil {
+      updateEyes()
+      updateMouth()
+      updateEyeBrows()
+    }
   }
   
   private func updateEyes() {
