@@ -9,6 +9,14 @@
 import UIKit
 
 class FaceView: UIView {
+  private struct Ratios {
+    static let SkullRadiusToEyeOffset: CGFloat = 3
+    static let SkullRadiusToEyeRadius: CGFloat = 10
+    static let SkullRadiusToMouthWidth: CGFloat = 1
+    static let SkullRadiusToMouthHeight: CGFloat = 3
+    static let SkullRadiusToMouthOffset: CGFloat = 3
+  }
+  
   var scale: CGFloat = 0.90
   
   private var skullRadius: CGFloat {
